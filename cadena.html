@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejemplo localStorage</title>
+</head>
+<body>
+  <h1>Guardar y mostrar con localStorage</h1>
+
+  <input type="text" id="texto" placeholder="Escribe algo..." />
+  <button onclick="guardarTexto()">Guardar</button>
+  <button onclick="mostrarTexto()">Mostrar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function guardarTexto() {
+      const valor = document.getElementById('texto').value;
+      localStorage.setItem('miTexto', valor);
+      alert('Texto guardado en localStorage');
+    }
+
+    function mostrarTexto() {
+      const valorGuardado = localStorage.getItem('miTexto');
+      document.getElementById('resultado').textContent = 
+        valorGuardado ? `Texto guardado: ${valorGuardado}` : 'No hay texto guardado.';
+    }
+  </script>
+</body>
+</html>
